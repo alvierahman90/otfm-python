@@ -22,3 +22,4 @@ optional arguments:
 Run `test.sh`.
 A `diff` is run on the actual output against what should have come out according
 to the spec.
+There should be no output if everything is working as expected.
