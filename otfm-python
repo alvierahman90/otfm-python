@@ -230,8 +230,11 @@ def main(args):
 
     # get macros
 
-    with open(args.macros_file) as file:
-        macros = get_macros(file.read())
+    try:
+        with open(args.macros_file) as file:
+            macros = get_macros(file.read())
+    except FileNotFoundError:
+        macros = {}
 
     # get tokens (file contents)
     if args.input == "-":
