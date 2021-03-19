@@ -139,7 +139,9 @@ def process(input, macros):
             value = token
 
             if token.lower() in macros.keys():
-                value = macros[token.lower()][0]
+                value = macros[token.lower()]
+                if isinstance(value, list):
+                    value = value[0]
             elif token.lower() in [f"{m}s" for m in macros.keys()]:
                 value = pluralize(macros[token.lower()[:-1]])
 
